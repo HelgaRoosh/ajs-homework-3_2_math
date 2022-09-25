@@ -1,4 +1,4 @@
-import Character from '../classmam_Character';
+import Character from '../classmam_Character_get_set';
 
 test.each([
   ['x'],
@@ -6,7 +6,7 @@ test.each([
 ])(
   ('class calculate for %s'),
   (charName) => {
-    const result = () => new Character(charName, 'Bowerman');
+    const result = () => new Character(charName, 'Magician');
     expect(result).toThrowError(new Error('Недопустимая длинна имени игрока'));
   },
 );

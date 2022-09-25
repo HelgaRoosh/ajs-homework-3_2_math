@@ -1,5 +1,4 @@
 import './js/app';
-
-import './js/classmam_Character';
-import './js/class_Bowerman';
-import './js/class_Zombie';
+import './js/classmam_Character_get_set';
+import './js/class_Magician_get_set';
+import './js/class_Daemon_get_set';

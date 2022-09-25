@@ -1,29 +1,35 @@
 // import Character from '../classmam_Character';
-import Bowerman from '../class_Bowerman';
-import Zombie from '../class_Zombie';
 
-test.each([
-  ['Zombie', Zombie, {
-    name: 'Zombie',
-    type: 'Zombie',
-    health: 100,
-    level: 1,
-    attack: 40,
-    defence: 10,
-  },
-  ],
-  ['Bowerman', Bowerman, {
-    name: 'Bowerman',
-    type: 'Bowerman',
-    health: 100,
-    level: 1,
-    attack: 25,
-    defence: 25,
-  }],
-])(
-  ('class calculate for %s'),
-  (charName, CharClass, expected) => {
-    const result = new CharClass(charName);
-    expect(result).toEqual(expected);
-  },
-);
+import Magician from '../class_Magician_get_set';
+import Daemon from '../class_Daemon_get_set';
+
+test('class Daemon stoned 0', () => {
+  const daemon = new Daemon('daemon', 2);
+  daemon.stoned = 0;
+  expect(daemon.stoned).toBe(false);
+  expect(daemon.attack).toBe(90);
+});
+
+test('class Magician stoned 1', () => {
+  const magician = new Magician('magician', 5);
+  magician.stoned = 1;
+  expect(magician.stoned).toBe(true);
+  expect(magician.attack).toBe(48);
+});
+
+test('class Magician stoned 1 && attack 1', () => {
+  const magician = new Magician('magician', 5);
+  magician.stoned = 1;
+  magician.attack = 1;
+  expect(magician.stoned).toBe(true);
+  expect(magician.attack).toBe(0);
+});
+
+// for control the values in replit
+// let attack = 100;
+// let distance = 5;
+// let attack1 = attack * (1.1 - 0.1 * distance);
+// let attack2 = attack1 - Math.log2(distance) * 5;
+// console.log (Math.round(attack));
+// console.log (Math.round(attack1));
+// console.log (Math.round(attack2));
